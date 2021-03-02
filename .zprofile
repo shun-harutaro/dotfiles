@@ -1,0 +1,1 @@
+/Users/shun_harutaro/.zprezto/runcoms/zprofile
