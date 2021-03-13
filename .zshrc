@@ -24,4 +24,5 @@ if [ -f '/Users/shun_harutaro/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/s
 if [ -f '/Users/shun_harutaro/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/shun_harutaro/google-cloud-sdk/completion.zsh.inc'; fi
 
 # alias of Google Chrome
-alias chrome="open -a /Applications/Google\ Chrome.app"
+alias chrome="open -a /Applications/Google\ Chrome.app"eval $(/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
