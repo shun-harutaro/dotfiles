@@ -10,13 +10,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
-.zpreztorc -> .zprezto/runcoms/zpreztorc
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/shun_harutaro/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/shun_harutaro/google-cloud-sdk/path.zsh.inc'; fi
 
@@ -24,5 +17,13 @@ if [ -f '/Users/shun_harutaro/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/s
 if [ -f '/Users/shun_harutaro/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/shun_harutaro/google-cloud-sdk/completion.zsh.inc'; fi
 
 # alias of Google Chrome
-alias chrome="open -a /Applications/Google\ Chrome.app"eval $(/bin/brew shellenv)
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+alias chrome="open -a /Applications/Google\ Chrome.app"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
