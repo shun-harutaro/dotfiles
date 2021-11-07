@@ -6,4 +6,3 @@ ln -sf ~/dotfiles/.zpreztorc ~/.zprezto/runcoms/zpreztorc
 ln -sf ~/dotfiles/.zprofile ~/.zprezto/runcoms/zprofile
 ln -sf ~/dotfiles/.zshenv ~/.zprezto/runcoms/zshenv
 ln -sf ~/dotfiles/.zshrc ~/.zprezto/runcoms/zshrc
-ln -sf ~/dotfiles/init.vim ~/.config/init.vim
