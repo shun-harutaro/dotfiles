@@ -16,3 +16,12 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+export DENO_INSTALL="/home/shun_harutaro/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
