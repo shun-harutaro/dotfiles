@@ -17,6 +17,8 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+export PATH="$PATH:/home/shun_harutaro/.local/bin"
+
 export DENO_INSTALL="/home/shun_harutaro/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
