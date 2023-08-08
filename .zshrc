@@ -1,29 +1,33 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+## lang
+export LANG=ja_JP.UTF-8
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+setopt auto_cd
+setopt share_history
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-export PATH="$PATH:/home/shun_harutaro/.local/bin" # PATH: pipenv
-
-export DENO_INSTALL="/home/shun_harutaro/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
-
+# alias
 alias ls='lsd'
 alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
+
+# OS dependences
+case ${OSTYPE} in
+  darwin*)
+    export PATH="\$PATH:/usr/local/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
+    ;;
+  linux*)
+    # setting for linux
+    ;;
+esac
+
+# ENV
+export PATH="$PATH:/home/shun_harutaro/.local/bin" # PATH: pipenv
+
+export DENO_INSTALL="/home/shun_harutaro/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
