@@ -18,6 +18,9 @@ keymap("n", "te", ":tabedit", opts)
 -- Move tab
 keymap("n", "gh", "gT", opts)
 keymap("n", "gl", "gt", opts)
+-- Split window
+keymap("n", "ss",  ":split<CR>", opts)
+keymap("n", "sv",  ":vsplit<CR>", opts)
 
 -- Insert --
 -- コンマの後にスペースを挿入
@@ -33,9 +36,14 @@ keymap("i", "'", "''<LEFT>", opts)
 -- ESC連打でハイライト解除
 keymap("n", "<Esc><Esc>", ":nohlsearch<CR><Esc>", opts)
 -- ファイルブラウザを展開
-vim.api.nvim_set_keymap(
+keymap(
     "n",
     "fb",
     ":Telescope file_browser<CR>",
     { noremap = true }
 )
+keymap("n", "ff", ":Telescope find_files<CR>", opts)
+keymap("n", "fg", ":Telescope live_grep<CR>", opts)
+keymap("n", "fb", ":Telescope buffers<CR>", opts)
+keymap("n", "fh", ":Telescope help_tags<CR>", opts)
+keymap("n", "fr", ":Telescope registers<CR>", opts)
