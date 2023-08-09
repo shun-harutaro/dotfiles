@@ -10,11 +10,19 @@ setopt auto_cd
 setopt share_history
 
 # alias
+alias v='nvim'
+# ls
 alias ls='lsd'
 alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
+# git
+alias gs='git status'
+alias gb='git branch'
+alias gaa='git add .'
+alias gcm='git commit -m'
+alias gp='git push'
 
 # OS dependences
 case ${OSTYPE} in
