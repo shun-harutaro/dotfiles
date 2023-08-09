@@ -22,9 +22,11 @@ keymap("n", "gl", "gt", opts)
 -- Insert --
 -- コンマの後にスペースを挿入
 keymap("i", ",", ",<Space>", opts)
--- 括弧とクオーテーションを補完
+--[[ nvim-autopairsで解決
+--括弧とクオーテーションを補完
 keymap("i", "{", "{}<LEFT>", opts)
 keymap("i", "(", "()<LEFT>", opts)
 keymap("i", "[", "[]<LEFT>", opts)
 keymap("i", "\"", "\"\"<LEFT>", opts)
 keymap("i", "'", "''<LEFT>", opts)
+--]]
