@@ -30,3 +30,5 @@ keymap("i", "[", "[]<LEFT>", opts)
 keymap("i", "\"", "\"\"<LEFT>", opts)
 keymap("i", "'", "''<LEFT>", opts)
 --]]
+-- ESC連打でハイライト解除
+keymap("n", "<Esc><Esc>", ":nohlsearch<CR><Esc>", opts)
