@@ -32,3 +32,10 @@ keymap("i", "'", "''<LEFT>", opts)
 --]]
 -- ESC連打でハイライト解除
 keymap("n", "<Esc><Esc>", ":nohlsearch<CR><Esc>", opts)
+-- ファイルブラウザを展開
+vim.api.nvim_set_keymap(
+    "n",
+    "fb",
+    ":Telescope file_browser<CR>",
+    { noremap = true }
+)

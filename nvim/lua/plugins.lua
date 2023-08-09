@@ -69,7 +69,15 @@ require("mason").setup({
 require('mason-lspconfig').setup()
 require('mason-lspconfig').setup_handlers({
     function(server_name)
-        lspconfig[server_name].setup({})
+        lspconfig[server_name].setup({
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = {'vim'}
+                    }
+                }
+            }
+        })
     end,
 })
 
@@ -95,9 +103,3 @@ cmp.setup({
 })
 
 vim.diagnostic.config({ virtual_text = false })
-vim.api.nvim_set_keymap(
-    "n",
-    "fb",
-    ":Telescope file_browser<CR>",
-    { noremap = true }
-)
