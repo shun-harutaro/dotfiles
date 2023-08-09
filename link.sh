@@ -1,5 +1,6 @@
 ln -sf ~/dotfiles/.gitignore_global ~/.gitignore_global
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
+ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -sf ~/dotfiles/.zlogin ~/.zprezto/runcoms/zlogin
 ln -sf ~/dotfiles/.zlogout ~/.zprezto/runcoms/zlogout
 ln -sf ~/dotfiles/.zpreztorc ~/.zprezto/runcoms/zpreztorc

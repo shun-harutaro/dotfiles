@@ -11,6 +11,7 @@ setopt share_history
 
 # alias
 alias v='nvim'
+alias ide='~/dotfiles/scripts/ide.sh'
 # ls
 alias ls='lsd'
 alias l='ls -l'

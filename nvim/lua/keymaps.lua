@@ -38,7 +38,7 @@ keymap("n", "<Esc><Esc>", ":nohlsearch<CR><Esc>", opts)
 -- ファイルブラウザを展開
 keymap(
     "n",
-    "fb",
+    "fl",
     ":Telescope file_browser<CR>",
     { noremap = true }
 )
