@@ -24,7 +24,7 @@ keymap("n", "sv",  ":vsplit<CR>", opts)
 
 -- Insert --
 -- コンマの後にスペースを挿入
-keymap("i", ",", ",<Space>", opts)
+--keymap("i", ",", ",<Space>", opts)
 --[[ nvim-autopairsで解決
 --括弧とクオーテーションを補完
 keymap("i", "{", "{}<LEFT>", opts)
