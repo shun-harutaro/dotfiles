@@ -40,3 +40,9 @@ export PATH="$PATH:/home/shun_harutaro/.local/bin" # PATH: pipenv
 
 export DENO_INSTALL="/home/shun_harutaro/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/shun/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/shun/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/shun/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/shun/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

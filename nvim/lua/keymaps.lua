@@ -14,10 +14,10 @@ local keymap = vim.api.nvim_set_keymap
 
 -- Normal --
 -- New tab
-keymap("n", "te", ":tabedit", opts)
+keymap("n", "tn", ":tabnew<CR>", opts)
 -- Move tab
-keymap("n", "gh", "gT", opts)
-keymap("n", "gl", "gt", opts)
+--keymap("n", "gh", "gT", opts)
+--keymap("n", "gl", "gt", opts)
 -- Split window
 keymap("n", "ss",  ":split<CR>", opts)
 keymap("n", "sv",  ":vsplit<CR>", opts)
@@ -38,7 +38,7 @@ keymap("n", "<Esc><Esc>", ":nohlsearch<CR><Esc>", opts)
 -- ファイルブラウザを展開
 keymap(
     "n",
-    "fl",
+    "fe",
     ":Telescope file_browser<CR>",
     { noremap = true }
 )
