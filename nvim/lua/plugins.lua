@@ -44,6 +44,7 @@ require('lualine').setup()
 require('gitsigns').setup()
 require('fidget').setup()
 require('nvim-autopairs').setup()
+require('nvim-ts-autotag').setup()
 require('lsp_lines').setup()
 require('telescope').load_extension "file_browser"
 
