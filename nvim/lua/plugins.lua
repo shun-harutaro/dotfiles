@@ -31,6 +31,7 @@ require('jetpack.packer').add {
     { 'nvim-telescope/telescope.nvim', tag = '0.1.2', requires = 'nvim-lua/plenary.nvim' },
     { 'nvim-treesitter/nvim-treesitter' },
     { 'windwp/nvim-autopairs' },
+    { 'windwp/nvim-ts-autotag' },
     { 'nvim-telescope/telescope-file-browser.nvim' },
 
     -- LSP
@@ -52,6 +53,10 @@ require'nvim-treesitter.configs'.setup({
     },
     Indent = {
         eneble = true,
+    },
+    ensure_installed = {
+        "lua",
+        "javascript"
     }
 })
 
