@@ -9,3 +9,4 @@ ln -sf ~/dotfiles/.zshenv ~/.zprezto/runcoms/zshenv
 ln -sf ~/dotfiles/.zshrc ~/.zprezto/runcoms/zshrc
 mkdir -p ~/.config
 ln -sf ~/dotfiles/nvim ~/.config/nvim
+git config --global core.excludesfile ~/.gitignore_global
