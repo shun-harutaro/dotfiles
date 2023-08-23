@@ -27,6 +27,9 @@ require('jetpack.packer').add {
     { 'hrsh7th/cmp-buffer' },
     { 'hrsh7th/cmp-path' },
     { 'hrsh7th/cmp-cmdline' },
+    -- snippet
+    { 'hrsh7th/cmp-vsnip' },
+    { 'hrsh7th/vim-vsnip' },
     -- others
     { 'nvim-telescope/telescope.nvim', tag = '0.1.2', requires = 'nvim-lua/plenary.nvim' },
     { 'nvim-treesitter/nvim-treesitter' },
@@ -61,6 +64,7 @@ require'nvim-treesitter.configs'.setup({
     }
 })
 
+-- Set up lspconfig.
 local lspconfig = require('lspconfig')
 --lspconfig.pyright.setup {}
 require("mason").setup({
@@ -72,10 +76,12 @@ require("mason").setup({
         }
     }
 })
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('mason-lspconfig').setup()
 require('mason-lspconfig').setup_handlers({
     function(server_name)
         lspconfig[server_name].setup({
+            capabilities = capabilities,
             settings = {
                 Lua = {
                     diagnostics = {
@@ -103,8 +109,23 @@ cmp.setup({
     }),
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
+        { name = 'vsnip'},
     }, {
         { name = "buffer" },
+    })
+})
+cmp.setup.cmdline({ '/', '?' }, {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+        { name = 'buffer' }
+    }
+})
+cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+        { name = 'path' }
+    }, {
+        { name = 'cmdline' }
     })
 })
 
