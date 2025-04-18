@@ -42,7 +42,17 @@ export DENO_INSTALL="/home/shun_harutaro/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/shun/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/shun/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/shun/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/shun/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/shun/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/shun/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/shun/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/shun/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+eval "$(pyenv init -)"
+
+# Created by `pipx` on 2024-06-27 06:44:20
+export PATH="$PATH:/Users/shun/.local/bin"
+
+. "$HOME/.cargo/env"

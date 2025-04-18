@@ -9,7 +9,7 @@ local options = {
     showmatch = true,
 
     -- tab/indent
-    tabstop = 4,
+    tabstop = 2,
     shiftwidth = 0, -- =tabstop
     smarttab = true,
     smartindent = true,
@@ -22,6 +22,7 @@ local options = {
     cursorcolumn = true,
     signcolumn = "yes",
     scrolloff = 8, -- 上下8行の視界を確保
+    termguicolors = true,
 }
 
 for key, val in pairs(options) do

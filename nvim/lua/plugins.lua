@@ -14,6 +14,7 @@ require('jetpack.packer').add {
 
     --appearance
     { 'cocopon/iceberg.vim' },
+    { 'rebelot/kanagawa.nvim' },
     { 'nvim-lualine/lualine.nvim', requires = 'nvim-tree/nvim-web-devicons'},
     { 'lewis6991/gitsigns.nvim' },
     { 'lukas-reineke/indent-blankline.nvim' },
@@ -87,6 +88,17 @@ require('mason-lspconfig').setup_handlers({
                     diagnostics = {
                         globals = {'vim'}
                     }
+                },
+                python = {
+                  venvPath = ".",
+                  pythonPath = "./.venv/bin/python",
+                  analysis = {
+                    extraPaths = {"."},
+                    typeCheckingMode = "off",  -- 必要に応じて "strict" に変更
+                    diagnosticMode = "workspace",
+                    useLibraryCodeForTypes = true,
+                    autoSearchPaths = true,
+                  }
                 }
             }
         })

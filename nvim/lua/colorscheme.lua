@@ -8,4 +8,5 @@ if vim.fn.filereadable(iceberg_file) == 0 then
     print("iceberg is not available")
 else
     vim.cmd 'colorscheme iceberg'
+    --vim.cmd('colorscheme kanagawa')
 end
