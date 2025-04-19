@@ -1,8 +1,9 @@
 1. [Install Prezto](https://github.com/sorin-ionescu/prezto)
 2. Clone this repositry
 3. Run link.sh
-4. Install pyenv
-5. [Install lsd](https://github.com/lsd-rs/lsd)
+4. Install homebrew
+5. Install pyenv
+6. [Install lsd](https://github.com/lsd-rs/lsd)
 ```
 git clone https://github.com/yyuu/pyenv.git ~/.pyenv
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zprofile
