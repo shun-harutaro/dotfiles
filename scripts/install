@@ -42,6 +42,8 @@ link_one "home/.gitignore_global" "$home_dir/.gitignore_global"
 link_one "home/.gitconfig" "$home_dir/.gitconfig"
 link_one "home/.zshrc" "$home_dir/.zshrc"
 link_one "home/.config/mise/config.toml" "$home_dir/.config/mise/config.toml"
+link_one "home/.cursor/cli-config.json" "$home_dir/.cursor/cli-config.json"
+link_one "home/.claude/settings.json" "$home_dir/.claude/settings.json"
 
 if [ "$dry_run" -eq 1 ]; then
 	echo "git config --global core.excludesfile $home_dir/.gitignore_global"
