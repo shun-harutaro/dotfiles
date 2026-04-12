@@ -30,6 +30,7 @@ Preview what would run without changing files:
 | `home/` | Dotfiles tracked in-repo; each path mirrors the name under `$HOME` |
 | `scripts/install` | Creates symlinks from `home/` into `$HOME` (e.g. `~/.gitconfig`, `~/.gitignore_global`) and sets `core.excludesfile` to `~/.gitignore_global` |
 | `Brewfile` | `brew bundle install` / `brew bundle check` |
+| `.cursor/rules/` | Cursor agent rules for this repository (not symlinked to `$HOME`) |
 
 ## Notes
 
