@@ -28,12 +28,12 @@ Preview what would run without changing files:
 | Path | Role |
 |------|------|
 | `home/` | Dotfiles tracked in-repo; each path mirrors the name under `$HOME` |
-| `scripts/install` | Creates symlinks from `home/` into `$HOME` (e.g. `~/.gitconfig`, `~/.gitignore_global`, `~/.zshrc`) and sets `core.excludesfile` to `~/.gitignore_global` |
+| `scripts/install` | Creates symlinks from `home/` into `$HOME` (e.g. `~/.gitconfig`, `~/.gitignore_global`, `~/.zshrc`, `~/.config/mise/config.toml`) and sets `core.excludesfile` to `~/.gitignore_global` |
 | `Brewfile` | `brew bundle install` / `brew bundle check` |
 | `.cursor/rules/` | Cursor agent rules for this repository (not symlinked to `$HOME`) |
 
 ## Notes
 
-- **Shell:** Tracked `~/.zshrc` defines aliases and optionally sources `~/.local/bin/env`. Put AWS Bedrock / Claude Code–specific `export`s in **`~/.zshrc.local`** (create yourself; see `home/.zshrc.local.example`). That file is not installed by `install`.
+- **Shell:** Tracked `~/.zshrc` defines aliases and optionally sources `~/.local/bin/env`. Put AWS Bedrock / Claude Code–specific `export`s in **`~/.zshrc.local`** (create yourself; see `home/.zshrc.local.example`). That file is not installed by `install`. **mise:** `home/.config/mise/config.toml` is symlinked to `~/.config/mise/config.toml`; run `mise install` to install tools declared there (ensure `mise` is on your `PATH`, e.g. via Homebrew).
 - A snapshot before a larger refresh is tagged `backup/pre-refresh-2026-04-12`.
 - `~/.zprezto/runcoms` or other old symlinks from the previous layout are not removed by `install`; clean those up manually if needed.

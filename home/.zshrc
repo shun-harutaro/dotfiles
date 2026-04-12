@@ -16,3 +16,4 @@ alias gp='git push'
 
 # Machine-specific (AWS Bedrock, Claude Code env, secrets). Not tracked in this repo.
 [ -f "$HOME/.zshrc.local" ] && . "$HOME/.zshrc.local"
+eval "$(mise activate zsh)"
