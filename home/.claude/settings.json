@@ -20,11 +20,6 @@
         "hooks": [
           {
             "type": "command",
-            "if": "Bash(git push *)",
-            "command": "echo 'git push はブロックされました。実行する場合はユーザーに確認してください。' >&2; exit 2"
-          },
-          {
-            "type": "command",
             "if": "Bash(rm -rf *)",
             "command": "echo 'rm -rf はブロックされました。この操作は許可されていません。' >&2; exit 2"
           }
