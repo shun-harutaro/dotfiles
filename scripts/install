@@ -40,6 +40,7 @@ link_one() {
 # home/<path> -> $HOME/<path>
 link_one "home/.gitignore_global" "$home_dir/.gitignore_global"
 link_one "home/.gitconfig" "$home_dir/.gitconfig"
+link_one "home/.zshrc" "$home_dir/.zshrc"
 
 if [ "$dry_run" -eq 1 ]; then
 	echo "git config --global core.excludesfile $home_dir/.gitignore_global"
