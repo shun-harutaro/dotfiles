@@ -7,7 +7,7 @@ alwaysApply: true
 
 ## Layout
 
-- Tracked dotfiles live under `home/` and mirror paths under `$HOME` (e.g. `home/.gitconfig` → `~/.gitconfig`). Shell: `home/.zshrc` may source machine-only `~/.zshrc.local` (not tracked); use `home/.zshrc.local.example` as a template.
+- Tracked dotfiles live under `home/` and mirror paths under `$HOME` (e.g. `home/.gitconfig` → `~/.gitconfig`, `home/.config/mise/config.toml` → `~/.config/mise/config.toml`). Shell: `home/.zshrc` may source machine-only `~/.zshrc.local` (not tracked); use `home/.zshrc.local.example` as a template.
 - `scripts/install` creates symlinks with `ln -sf` and may run a small amount of `git config --global` (e.g. `core.excludesfile`).
 - Package list for Homebrew is the single root `Brewfile` (run `brew bundle` from the repo root).
 
