@@ -1,16 +1,37 @@
-1. [Install Prezto](https://github.com/sorin-ionescu/prezto)
-2. Clone this repositry
-3. Run link.sh
-4. Install homebrew
-5. Install pyenv
-6. [Install lsd](https://github.com/lsd-rs/lsd)
+# dotfiles
+
+Personal dotfiles for macOS. Files under `home/` are symlinked into `$HOME` by `scripts/install`. Optional packages are declared in `Brewfile` for `brew bundle`.
+
+## Prerequisites
+
+- [Homebrew](https://brew.sh/)
+- Git
+
+## Setup
+
+Clone this repository to any path (for example `~/src/dotfiles`).
+
+```sh
+cd /path/to/dotfiles
+brew bundle
+./scripts/install
 ```
-git clone https://github.com/yyuu/pyenv.git ~/.pyenv
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zprofile
-echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zprofile
-echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
-echo 'eval "$(pyenv init -)"' >> ~/.zshrc
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python3 get-pip.py
-pip3 install pipenv
+
+Preview what would run without changing files:
+
+```sh
+./scripts/install --dry-run
 ```
+
+## Layout
+
+| Path | Role |
+|------|------|
+| `home/` | Dotfiles tracked in-repo; each path mirrors the name under `$HOME` |
+| `scripts/install` | Creates symlinks from `home/` into `$HOME` and sets `core.excludesfile` to `~/.gitignore_global` |
+| `Brewfile` | `brew bundle install` / `brew bundle check` |
+
+## Notes
+
+- A snapshot before a larger refresh is tagged `backup/pre-refresh-2026-04-12`.
+- `~/.zprezto/runcoms` or other old symlinks from the previous layout are not removed by `install`; clean those up manually if needed.
