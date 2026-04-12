@@ -7,7 +7,7 @@ run = "claude"
 
 [tasks."claude:bedrock"]
 description = "Launch Claude Code via AWS Bedrock"
-env = { CLAUDE_CODE_USE_BEDROCK = "1", AWS_REGION = "ap-northeast-1" }
+env = { CLAUDE_CODE_USE_BEDROCK = "1", AWS_REGION = "ap-northeast-1", ANTHROPIC_MODEL = "jp.anthropic.claude-sonnet-4-6" }
 run = "claude"
 
 [tasks."aws:login"]
@@ -16,6 +16,6 @@ run = "aws sso login"
 
 [tasks."claude:bedrock-fresh"]
 description = "AWS SSO login + Launch Claude Code via Bedrock"
-env = { CLAUDE_CODE_USE_BEDROCK = "1", AWS_REGION = "ap-northeast-1" }
+env = { CLAUDE_CODE_USE_BEDROCK = "1", AWS_REGION = "ap-northeast-1", ANTHROPIC_MODEL = "jp.anthropic.claude-sonnet-4-6" }
 depends = ["aws:login"]
 run = "claude"
