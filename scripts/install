@@ -1,0 +1,47 @@
+#!/bin/sh
+# Symlink files from home/ into $HOME. Run from anywhere inside the repo
+# (script resolves repository root via Git).
+
+set -eu
+
+dry_run=0
+for arg in "$@"; do
+	case "$arg" in
+	--dry-run) dry_run=1 ;;
+	esac
+done
+
+script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+root=$(git -C "$script_dir/.." rev-parse --show-toplevel 2>/dev/null) || {
+	echo "install: not a git repository (expected dotfiles checkout)" >&2
+	exit 1
+}
+
+home_dir=${HOME:?}
+
+link_one() {
+	_src_rel=$1
+	_dst=$2
+	_src="$root/$_src_rel"
+	if ! { [ -f "$_src" ] || [ -L "$_src" ]; }; then
+		echo "install: missing source: $_src" >&2
+		exit 1
+	fi
+	_dst_dir=$(dirname "$_dst")
+	if [ "$dry_run" -eq 1 ]; then
+		echo "mkdir -p $_dst_dir"
+		echo "ln -sf $_src $_dst"
+	else
+		mkdir -p "$_dst_dir"
+		ln -sf "$_src" "$_dst"
+	fi
+}
+
+# home/<path> -> $HOME/<path>
+link_one "home/.gitignore_global" "$home_dir/.gitignore_global"
+
+if [ "$dry_run" -eq 1 ]; then
+	echo "git config --global core.excludesfile $home_dir/.gitignore_global"
+else
+	git config --global core.excludesfile "$home_dir/.gitignore_global"
+fi
