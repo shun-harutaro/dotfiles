@@ -1,0 +1,27 @@
+---
+description: Conventions for this dotfiles repo, home/ layout, and install script
+alwaysApply: true
+---
+
+# Dotfiles repository
+
+## Layout
+
+- Tracked dotfiles live under `home/` and mirror paths under `$HOME` (e.g. `home/.gitconfig` → `~/.gitconfig`).
+- `scripts/install` creates symlinks with `ln -sf` and may run a small amount of `git config --global` (e.g. `core.excludesfile`).
+- Package list for Homebrew is the single root `Brewfile` (run `brew bundle` from the repo root).
+
+## Install script
+
+- Resolve the repository root with Git (e.g. `git -C "$(dirname "$0")/.." rev-parse --show-toplevel`). Do not hardcode paths like `~/dotfiles`.
+- Use POSIX `sh` (`#!/bin/sh`, `set -eu`). Support `--dry-run` when showing planned `mkdir` / `ln` / `git config` actions.
+- When adding a new file: add it under `home/`, add a `link_one` line in `scripts/install`, and update `README.md` if the change is user-facing.
+
+## Safety and scope
+
+- Do not commit secrets (API keys, tokens, private hostnames) into `home/` or tracked config. Prefer machine-local files or patterns like Git `includeIf` for work-specific identity.
+- Keep edits scoped to the task; avoid unrelated refactors or drive-by renames.
+
+## Commits
+
+- Use Conventional Commits for this repository (e.g. `feat(home):`, `fix(install):`, `docs:`).
