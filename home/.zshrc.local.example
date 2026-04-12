@@ -1,0 +1,9 @@
+# Copy to ~/.zshrc.local and adjust. That file is not symlinked from this repo.
+#
+# Example: Claude Code + Amazon Bedrock–style environment variables.
+# Uncomment or change values for your account.
+
+# export CLAUDE_CODE_USE_BEDROCK=1
+# export AWS_PROFILE=your-bedrock-capable-profile
+# export AWS_REGION=ap-northeast-1
+# export ANTHROPIC_MODEL=jp.anthropic.claude-sonnet-4-6
