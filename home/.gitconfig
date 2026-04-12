@@ -1,3 +1,5 @@
 [user]
 	name = shun-harutaro
 	email = nozaki.shuntaro@proton.me
+[core]
+	excludesfile = ~/.gitignore_global
