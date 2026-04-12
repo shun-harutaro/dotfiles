@@ -7,8 +7,9 @@ alwaysApply: true
 
 ## Layout
 
-- Tracked dotfiles live under `home/` and mirror paths under `$HOME` (e.g. `home/.gitconfig` → `~/.gitconfig`, `home/.config/mise/config.toml` → `~/.config/mise/config.toml`, `home/.cursor/cli-config.json`, `home/.claude/settings.json`). Shell: `home/.zshrc` may source machine-only `~/.zshrc.local` (not tracked); use `home/.zshrc.local.example` as a template. Keep Cursor and Claude Code permission rules in sync when editing allow-lists.
-- `scripts/install` creates symlinks with `ln -sf` and may run a small amount of `git config --global` (e.g. `core.excludesfile`).
+- Tracked dotfiles live under `home/` and mirror paths under `$HOME` (e.g. `home/.config/mise/config.toml` → `~/.config/mise/config.toml`, `home/.cursor/cli-config.json`, `home/.claude/settings.json`). Shell: `home/.zshrc` may source machine-only `~/.zshrc.local` (not tracked); use `home/.zshrc.local.example` as a template. Keep Cursor and Claude Code permission rules in sync when editing allow-lists.
+- Git identity (`user.name`, `user.email`) and `core.excludesfile` are **not** managed here; configure them per-machine with `git config --global`.
+- `scripts/install` creates symlinks with `ln -sf` only. No `git config --global` calls.
 - Package list for Homebrew is the single root `Brewfile` (run `brew bundle` from the repo root).
 
 ## Install script

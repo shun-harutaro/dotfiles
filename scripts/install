@@ -45,8 +45,3 @@ link_one "home/.config/ccstatusline/settings.json" "$home_dir/.config/ccstatusli
 link_one "home/.cursor/cli-config.json" "$home_dir/.cursor/cli-config.json"
 link_one "home/.claude/settings.json" "$home_dir/.claude/settings.json"
 
-if [ "$dry_run" -eq 1 ]; then
-	echo "git config --global core.excludesfile $home_dir/.gitignore_global"
-else
-	git config --global core.excludesfile "$home_dir/.gitignore_global"
-fi
